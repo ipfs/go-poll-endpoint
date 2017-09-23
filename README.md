@@ -1,7 +1,8 @@
 # go-poll-endpoint is an Unix util to poll an endpoint
 
-This small unix tool aims to make it easy to check if an endpoint is
-reachable.
+This small unix tool aims to make it easy to check if an http endpoint
+is reachable. It waits for a http endpoint to be reachable and return
+with "http.StatusOK".
 
 ### Install
 
