@@ -1,4 +1,4 @@
-// pollEndpoint is a helper utility that waits for a http endpoint to be reachable and return with http.StatusOK
+// go-poll-endpoint is a helper utility that waits for a http endpoint to be reachable and return with http.StatusOK
 package main
 
 import (
@@ -23,7 +23,7 @@ var (
 	verbose  = flag.Bool("v", false, "verbose logging")
 )
 
-var log = logging.Logger("pollEndpoint")
+var log = logging.Logger("go-poll-endpoint")
 
 func main() {
 	flag.Parse()
@@ -80,7 +80,7 @@ func checkOK(resp *http.Response, err error) error {
 		}
 		body, err := ioutil.ReadAll(resp.Body)
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "pollEndpoint: ioutil.ReadAll() Error: %s", err)
+			fmt.Fprintf(os.Stderr, "go-poll-endpoint: ioutil.ReadAll() Error: %s", err)
 		}
 		return fmt.Errorf("Response not OK. %d %s %q", resp.StatusCode, resp.Status, string(body))
 	}
